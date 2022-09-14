@@ -1,20 +1,20 @@
 const mongoose = require('mongoose');
 
-const PeopleSchema = new mongoose.Schema({
-    name: {
-        type: String,
+const FishSchema = new mongoose.Schema({
+    name: { 
+        type: String, 
         required: true,
         },
     image: {
         type: String,
         required: true,
         },
-    title: {
+    description: {
         type: String,
         required: true,
         },
 },{timestamps: true});
 
-const People = mongoose.model('People', PeopleSchema)
+const Fish = mongoose.model('Fish', FishSchema)
 
-module.exports = People
+module.exports = Fish

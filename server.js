@@ -6,13 +6,15 @@ const { PORT } = process.env;
 const express = require('express');
 const app = express();
 const peopleController = require('./controllers/people-controller');
+const fishController = require('./controllers/fish-controller');
 const morgan = require('morgan');
 const cors = require('cors');
 
 app.use(express.json());
 app.use(cors());
 app.use(morgan('dev'));
-app.use('/people', peopleController)
+app.use('/people', peopleController);
+app.use('/fish', fishController);
 
 app.get('/', (req, res) => {
     res.send('Hello World!');
